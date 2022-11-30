@@ -5,12 +5,14 @@
 #ifndef LINKEDLISTIMPLEMENTATION_LINKEDLIST_H
 #define LINKEDLISTIMPLEMENTATION_LINKEDLIST_H
 
+#include <iostream>
+using namespace std;
+
 class Node {
-private:
-    int value;
-    Node *next;
 public:
+    int value;
     explicit Node(int value);
+    Node *next;
 };
 
 class LinkedList {
@@ -22,6 +24,8 @@ private:
 public:
     LinkedList();
     explicit LinkedList(int value);
+    void append(int value);
+    void print();
 };
 
 
