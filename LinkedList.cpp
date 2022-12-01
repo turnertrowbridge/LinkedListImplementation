@@ -16,24 +16,33 @@ LinkedList::LinkedList() {
     totalNodes = 0;
 }
 
-LinkedList::LinkedList(int value) {
-    head = new Node(value);
-    tail = new Node(value);
+void LinkedList::newLinkedList(Node* newNode) {
+    head = newNode;
+    tail = newNode;
     totalNodes++;
 }
 
 void LinkedList::append(int value) {
-    Node* newNode = new Node(value);
+    Node *newNode = new Node(value);
 
-    if(head == nullptr){   // list is empty, newNode is both head and tail of list
-        head = newNode;
-        tail = newNode;
-        totalNodes++;
+    if(head == nullptr){
+        newLinkedList(newNode);
         return;
     }
 
     tail->next = newNode; // points the tail of the current node to newNode
     tail = newNode; // sets the tail of newNode as newNode
+    totalNodes++;
+}
+
+void LinkedList::prepend(int value) {
+    Node *newNode = new Node(value);
+    if(head == nullptr){   // list is empty, newNode is both head and tail of list
+        newLinkedList(newNode);
+        return;
+    }
+    newNode->next = head;
+    head = newNode;
     totalNodes++;
 }
 
@@ -45,4 +54,6 @@ void LinkedList::print() {
     }
 
 }
+
+
 

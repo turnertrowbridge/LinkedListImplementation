@@ -23,8 +23,9 @@ private:
 
 public:
     LinkedList();
-    explicit LinkedList(int value);
+    void newLinkedList(Node* newNode);
     void append(int value);
+    void prepend(int value);
     void print();
 };
 

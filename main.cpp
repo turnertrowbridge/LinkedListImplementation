@@ -9,6 +9,7 @@ int main() {
     myLinkedList.append(20);
     myLinkedList.append(1);
     myLinkedList.append(7);
+    myLinkedList.prepend(9);
     myLinkedList.print();
 
 
