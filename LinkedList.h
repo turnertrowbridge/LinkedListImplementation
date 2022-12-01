@@ -20,13 +20,16 @@ private:
     Node *head;
     Node *tail;
     int totalNodes;
+    void newLinkedList(Node* newNode);
 
 public:
     LinkedList();
-    void newLinkedList(Node* newNode);
     void append(int value);
     void prepend(int value);
+    void insert(int value, int index);
+    void remove(int index);
     void print();
+    void removeAll();
 };
 
 
